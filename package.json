@@ -2,8 +2,9 @@
   "name": "hack-k-state",
   "version": "1.0.0",
   "description": "",
-  "main": "express.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/YeeChuen/Hack-K-state#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^6.7.2"
+    "mongoose": "^6.7.2",
+    "nodemon": "^2.0.20"
   }
 }
