@@ -3,6 +3,18 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 
+const mongoose=require('mongoose');
+
+const mongoURL='mongodb+srv://admin:adminpass@alphacluster.8ddek3r.mongodb.net/?retryWrites=true&w=majority';
+
+mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true },
+    () => {
+      console.log("Connected to MongoDB");
+    }
+);
+
+app.use(express.json);
+
 router.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/frontend/index.html'));
   //__dirname : It will resolve to your project folder.
