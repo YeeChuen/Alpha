@@ -8,27 +8,19 @@
 </head>
 <body>
     <p> FORMS PAGE (for login, signup, add, edit, search></p>
-    <form action="/team_name_url/" method="post">
-        <label for="team_name">Enter name: </label>
-        <input
-          id="seen_name"
-          type="text"
-          name="name_field"
-          value="place holder text." />
-        <input type="submit" value="OK" /><br>
-        <input
-          id="input_password"
-          type="password"
-          name="name_field"
-          value="password" />
-        <input type="submit" value="OK" /><br>
+    <form method="post">
+        Username: <input
+            id="user_name"
+            name="user_name"
+            type="text"
+            placeholder="enter username"><br>
+        Password: <input
+            id="user_password"
+            name="user_password"
+            type="password"
+            placeholder="enter password"><br>
         <input type="checkbox" onclick="myFunction()"> show password<br>
-        <input
-          id="some_other_input"
-          type="text"
-          name="name_field"
-          value="place holder text." />
-        <input type="submit" value="OK" /><br>
+        <input type="submit" value="submit">
         
         <script>
             function myFunction() {
