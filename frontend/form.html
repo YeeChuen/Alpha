@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Express HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <p> FORMS PAGE (for login, signup, add, edit, search></p>
+    <form action="/team_name_url/" method="post">
+        <label for="team_name">Enter name: </label>
+        <input
+          id="seen_name"
+          type="text"
+          name="name_field"
+          value="place holder text." />
+        <input type="submit" value="OK" /><br>
+        <input
+          id="input_password"
+          type="password"
+          name="name_field"
+          value="password" />
+        <input type="submit" value="OK" /><br>
+        <input type="checkbox" onclick="myFunction()"> show password<br>
+        <input
+          id="some_other_input"
+          type="text"
+          name="name_field"
+          value="place holder text." />
+        <input type="submit" value="OK" /><br>
+        
+        <script>
+            function myFunction() {
+                var x = document.getElementById("input_password");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+      </form>
+</body>
+</html>

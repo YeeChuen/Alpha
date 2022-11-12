@@ -16,6 +16,10 @@ router.get('/sitemap',function(req,res){
   res.sendFile(path.join(__dirname+'/frontend/sitemap.html'));
 });
 
+router.get('/form',function(req,res){
+    res.sendFile(path.join(__dirname+'/frontend/form.html'));
+  });
+
 //add the router
 app.use('/', router);
 app.listen(process.env.port || 3000);
