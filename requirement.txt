@@ -1,4 +1,5 @@
 npm init --y
 npm install --save express
+npm install ejs
 npm install mongodb
 npm install mongoose

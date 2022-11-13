@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  
+<body>
+    <h1 style="color: green"> GeeksForGeeks </h1>
+    <h3> 
+        <%= author.name %> has skill on 
+    </h3>
+  
+    <ul>
+        <% author.skills.forEach((skill)=>{%>
+              <li><%=skill%></li> 
+        <%});%>
+    </ul>
+  
+</body>
+</html>

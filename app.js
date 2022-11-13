@@ -15,34 +15,38 @@ mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true },
     }
 );
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 
 router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/frontend/index.html'));
+  res.render(path.join(__dirname+'/frontend/index.html'));
   //__dirname : It will resolve to your project folder.
 });
 
 router.get('/about',function(req,res){
-  res.sendFile(path.join(__dirname+'/frontend/about.html'));
+  res.render(path.join(__dirname+'/frontend/about.html'));
 });
 
 router.get('/sitemap',function(req,res){
-  res.sendFile(path.join(__dirname+'/frontend/sitemap.html'));
+  res.render(path.join(__dirname+'/frontend/sitemap.html'));
 });
 
 router.get('/form',function(req,res){
-    res.sendFile(path.join(__dirname+'/frontend/form.html'));
+    res.render(path.join(__dirname+'/frontend/form.html'));
 });
 
 router.get('/test',function(req,res){
-    res.sendFile(path.join(__dirname+'/frontend/test.html'));
+    res.render(path.join(__dirname+'/frontend/test.html'));
 });
 
-  
+router.get('/stopwatch',function(req,res){
+    res.render(path.join(__dirname+'/frontend/stopwatch.html'));
+}); 
+
 router.post('/form', function (req, res) {
     const input = req.body
+    console.log(input.user_name)
     console.log(input.user_password)
-    res.sendFile(path.join(__dirname+'/frontend/input.html', 
+    res.render(path.join(__dirname+'/frontend/input.html', 
     {    user_name: input.user_name,
         user_password: input.user_password }));
 
