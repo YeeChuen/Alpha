@@ -1,6 +1,5 @@
 <html>
     <div style="background: #076AE0;">
-        <title>Alpha Home</title>
         <head style="background: #076AE0;" >
             <script src="https://kit.fontawesome.com/8a9504ecc7.js" crossorigin="anonymous"></script>
 
@@ -33,27 +32,35 @@
             bottom:-500px;
         }
     </style>
+
     <center>
-        <p>"<%= user.username %>'s profile"</p><br>
-        <p>"EMAIL"</p><br>
-        <button type="button" onclick="location.href='/viewworkout';">"WORKOUT BTN"</button><br><br>
-        <button type="button" onclick="location.href='/addworkout';">"CREATE/EDIT WORKOUT BTN"</button><br><br>
-        <button type="button" onclick="location.href='/home';">"DELETE WORKOUT BTN"</button><br><br>
-        <button type="button" onclick="location.href='/home';">"REQUEST STUDENT BTN"</button><br><br>
+        <br><br>
+        <form>
+                <div>
+                    <input type="text" id="search" name="search" placeholder="search profile">
+                    <button type="button"><i class="fa fa-solid fa-magnifying-glass"></i></button>
+                </div>
+        </form><br>
+
+        <button type="button" onclick="location.href='/home';">"SEARCH RESULT 1"</button><br><br>
+        <button type="button" onclick="location.href='/home';">"SEARCH RESULT 2"</button><br><br>
     </center>
-    <form action="/student_page.php" method="post">
+
+    <form action="/search_page.php" method="post">
         <center>
             <div class = "position">
                 
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/font-awesome.min.css">
-                    <button class="btn" type="button" onclick="location.href='/home';"><i class="fa-solid fa-house"></i></i></button>
-                    <button class="btn" type="button" onclick="location.href='/notification';"><i class="fa fa-bell"></i></button>
-                    <button class="btn" type="button" onclick="location.href='/students';"><i class="fa-solid fa-people-group"></i></button>
-                    <button class="btn" type="button" onclick="location.href='/search';"><i class="fa fa-solid fa-magnifying-glass"></i></button>
-                
+                    <button class="btn"><i class="fa-solid fa-house"></i></i></button>
+                    <button class="btn"><i class="fa fa-bell"></i></button>
+                    <button class="btn"><i class="fa-solid fa-people-group"></i></button>
+                    <button class="btn"><i class="fa fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn"><i class="fa-solid fa-right-from-bracket"></i></button>
             </div>
         </center>
     </form>
+
+
 
 </body>
 </html>

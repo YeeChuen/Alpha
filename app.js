@@ -75,11 +75,19 @@ router.get('/addworkout', function(req, res){
 // add exercise page
 
 // student page
+router.get('/students', function(req, res){
+    res.render('students')
+})
 
 // notification page
+router.get('/notification', function(req, res){
+    res.render('notification')
+})
 
 // search page 
-
+router.get('/search', function(req, res){
+    res.render('search')
+})
 
 
 
