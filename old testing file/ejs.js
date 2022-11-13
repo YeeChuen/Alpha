@@ -34,6 +34,27 @@ router.get('/', function(req, res) {
     res.render('index');
   });
 
+  // create a page that get 1 form input from user
+router.get('/form', function(req, res) {
+  res.render('form');
+});
+
+// access 1 value input from POST method, then pass to another frontend
+router.post('/input',urlencodedParser, function (req, res) {
+  console.log(req.body.user_name)
+  res.render('input',{user: req.body});
+});
+
+// dynamic ejs with stopwatch
+router.get('/stopwatch', function(req, res) {
+res.render('stopwatch');
+});
+
+// dynamic ejs with stopwatch
+router.get('/donuts', function(req, res) {
+res.render('donuts');
+});
+
 app.use('/', router);
 app.listen(process.env.port || 3000);
 
