@@ -28,7 +28,7 @@ mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true },
 app.set('view engine', 'ejs');
 
 // current user
-let curruser;
+let curruser=null;
 
 // ------------------
 // start setting enpoints
@@ -43,29 +43,56 @@ router.get('/signup', function(req, res){
 })
 
 // user home page
-router.post('/home',urlencodedParser, function (req, res) {
-    const input = req.body
-    curruser = input.username
-    // 2 lines below would be deleted in real life application
-    console.log('username entered: ' +input.username)
-    console.log('password entered: ' +input.password)
+if (curruser == null){
+    router.post('/home',urlencodedParser, function (req, res) {
+        const input = req.body
+        curruser = input.username
+        // 2 lines below would be deleted in real life application
+        console.log('username entered: ' +input.username)
+        console.log('password entered: ' +input.password)
 
-    // if 
-    // check user is not in the database redirect to signup page
+        // if 
+        // check user is not in the database redirect to signup page
 
-    // else
-    // retrieve the user information and list of workouts 
-    // pass retrival to the front end as JSON
+        // else
+        // retrieve the user information and list of workouts 
+        // pass retrival to the front end as JSON
+        
+        res.render('home',{user: req.body});
+    });
     
-    res.render('home',{user: req.body});
-});
+}
+else{
+    router.get('/home', function(req, res){
+        res.render('home', {user: req.body})
+    })
+}
 
 // view workout page (no post)
 router.get('/viewworkout', function(req, res){
     res.render('viewworkout')
 })
 
+// Mock workout data
+const benchpress1 = {exerciseCode: "E1", name: "benchpress", weights: 10, reps: 10, restTime: 10}
+const benchpress2 = {exerciseCode: "E2", name: "benchpress", weights: 20, reps: 8, restTime: 10}
+const benchpress3 = {exerciseCode: "E3", name: "benchpress", weights: 30, reps: 6, restTime: 10}
+const squat1 = {exerciseCode: "E4", name: "squat", weights: 30, reps: 10, restTime: 10}
+const squat2 = {exerciseCode: "E5", name: "squat", weights: 40, reps: 8, restTime: 10}
+const squat3 = {exerciseCode: "E6", name: "squat", weights: 50, reps: 6, restTime: 10}
+const workoutdata = {workoutCode: "W1", ownerID: "012", 
+exercises: [benchpress1, benchpress2, benchpress3, squat1, squat2, squat3], 
+workoutName: "upper+lower"}
+
 // start workout page (timer)
+router.get('/startworkout', function(req, res){
+    res.render('startworkout', {workout: workoutdata})
+})
+
+// end workout page (timer)
+router.get('/endworkout', function(req, res){
+    res.render('endworkout')
+})
 
 // Create/edit workout page
 router.get('/addworkout', function(req, res){
@@ -73,6 +100,9 @@ router.get('/addworkout', function(req, res){
 })
 
 // add exercise page
+router.get('/addexercise', function(req, res){
+    res.render('addexercise')
+})
 
 // student page
 router.get('/students', function(req, res){
