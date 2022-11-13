@@ -80,13 +80,18 @@ const benchpress3 = {exerciseCode: "E3", name: "benchpress", weights: 30, reps: 
 const squat1 = {exerciseCode: "E4", name: "squat", weights: 30, reps: 10, restTime: 10}
 const squat2 = {exerciseCode: "E5", name: "squat", weights: 40, reps: 8, restTime: 10}
 const squat3 = {exerciseCode: "E6", name: "squat", weights: 50, reps: 6, restTime: 10}
-const workoutdata = {workoutCode: "W1", ownerID: "012", 
+const workoutdata1 = {workoutCode: "W1", ownerID: "012", 
 exercises: [benchpress1, benchpress2, benchpress3, squat1, squat2, squat3], 
 workoutName: "upper+lower"}
+const workoutdata2 = {workoutCode: "W2", ownerID: "012", 
+exercises: [benchpress1, benchpress2, benchpress3], 
+workoutName: "upper+lower"}
+const userdata1 = {name: "qwer", username: "qwer", email:"qwer@gmail.com",
+password: "1234", workouts: [workoutdata1,workoutdata2], isAdmin: false}
 
 // start workout page (timer)
 router.get('/startworkout', function(req, res){
-    res.render('startworkout', {workout: workoutdata})
+    res.render('startworkout', {workout: workoutdata1})
 })
 
 // end workout page (timer)

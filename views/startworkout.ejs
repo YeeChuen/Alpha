@@ -31,8 +31,50 @@
             position:relative;  
             bottom:-500px;
         }
-    </style>
-    
+    </style>   
+    <script type = "text/javascript">
+        var sec = 0;
+        var min=0;
+        var hr=0;
+
+  // code block to be executed
+        var varName = function(){
+            if(true) {
+                sec = sec + 1;
+                var temp = sec;
+                if (temp > 59){
+                    temp = sec
+                    sec = sec%60
+                    temp = (temp-sec)/60
+                    min += temp
+                }
+                if (temp > 59){
+                    min = min%60
+                    temp = (temp-min)/60
+                    hr += temp
+                }
+                document.getElementById("timer").innerHTML = hr + "hr "+min+"min "+sec+"sec ";
+                /* your code goes here */
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+        window.setInterval(varName, 1000);
+        let reset = document.getElementById('reset');
+        reset.addEventListener('click', function () {
+            console.log("clicked")
+            hr = 0;
+            min = 0;
+            sec = 0;
+        });
+   </script>
+    <center>
+        <p><%= workout.workoutCode%></p>
+        <div id="timer"></div>
+        <div class="buttons">
+            <button class="btn" id="reset">Reset</button>
+        </div>
+    </center>
     <form action="/workout_page.php" method="post">
         <center>
             <div class = "position">
@@ -46,8 +88,5 @@
             </div>
         </center>
     </form>
-
-
-
 </body>
 </html>
