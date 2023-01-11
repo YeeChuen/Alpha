@@ -1,0 +1,92 @@
+<html>
+    <div style="background: #076AE0;">
+        <head style="background: #076AE0;" >
+            <script src="https://kit.fontawesome.com/8a9504ecc7.js" crossorigin="anonymous"></script>
+
+        <center>  <img src="Alpha-logos_white.png" height="100" width="100" class = ".cropped-ofp"> </center>
+        </head>
+`   </div>
+<body style="background: #ffffff;">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <style>
+         .btn {
+            background-color: #076AE0; /* Blue background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 12px 16px; /* Some padding */
+            font-size: 16px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+        }
+        .container {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 1000;
+            font-size: 28px;
+            text-align: center;
+            background-color: white;
+            color: #076AE0;
+        }
+
+        .position{
+            position:relative;  
+            bottom:-500px;
+        }
+    </style>   
+    <script type = "text/javascript">
+        var sec = 0;
+        var min=0;
+        var hr=0;
+
+  // code block to be executed
+        var varName = function(){
+            if(true) {
+                sec = sec + 1;
+                var temp = sec;
+                if (temp > 59){
+                    temp = sec
+                    sec = sec%60
+                    temp = (temp-sec)/60
+                    min += temp
+                }
+                if (temp > 59){
+                    min = min%60
+                    temp = (temp-min)/60
+                    hr += temp
+                }
+                document.getElementById("timer").innerHTML = hr + "hr "+min+"min "+sec+"sec ";
+                /* your code goes here */
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+        window.setInterval(varName, 1000);
+        let reset = document.getElementById('reset');
+        reset.addEventListener('click', function () {
+            console.log("clicked")
+            hr = 0;
+            min = 0;
+            sec = 0;
+        });
+   </script>
+    <center>
+        <p><%= workout.workoutCode%></p>
+        <div id="timer"></div>
+        <div class="buttons">
+            <button class="btn" id="reset">Reset</button>
+        </div>
+    </center>
+    <form action="/workout_page.php" method="post">
+        <center>
+            <div class = "position">
+                
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/font-awesome.min.css">
+                    <button class="btn"><i class="fa-solid fa-house"></i></i></button>
+                    <button class="btn"><i class="fa fa-bell"></i></button>
+                    <button class="btn"><i class="fa-solid fa-people-group"></i></button>
+                    <button class="btn"><i class="fa fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </center>
+    </form>
+</body>
+</html>

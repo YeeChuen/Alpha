@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        console.log("Hi");
+    </script>
+</head>
+<body style="background: #076AE0;">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <style>
+        .cropped-ofp {
+            width: 150px; 
+            height: 150px; 
+            object-fit: cover;
+            object-position: 25% 25%; 
+            }
+
+        .container {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 1000;
+            font-size: 26px;
+            text-align: center;
+            background-color: white;
+            color: #076AE0;
+            border-style: none;
+        }
+
+        .position{
+            position:relative;  
+            bottom:170px;
+        }
+    </style>
+
+    <center>
+        <img src="Alpha-logos_transparent.png" height="500" width="500" class = ".cropped-ofp">
+    </center>
+    
+
+    <form action="/home" method="post">
+        <div class = "position" >
+            <center>
+                <input class = "container" style="width: 165px;height: 50px;" type="text" id="username" name="username" placeholder="Username"> <br><br>
+                <input class = "container" style="width: 165px;height: 50px;" type="text" id="password" name="password" placeholder="Password"> <br><br>
+                <input class = "container" style="margin:10px;border-color:white;border-radius:20px;height:53px;width:159px;display:block;"type="submit" value="Login"></input>
+                <input class = "container" style="border-color:white;border-radius:20px;height:53px;width:159px;display:block;" type="button" onclick="location.href='/signup';" value="Sign Up"></input>
+            </center>
+        </div>
+    </form>
+
+
+
+
+
+
+</body>
+
+</html>
